@@ -14,11 +14,6 @@
     </header>
 
     <main class="container mx-auto px-4">
-        <section class="tabs py-4">
-            <div id="tabs-container">
-                </div>
-        </section>
-
         <section class="info py-4 border-t border-gray-300 dark:border-gray-700">
             <h2 class="text-xl font-bold text-gray-800 dark:text-white">Informazioni sul brano</h2>
             <ul class="list-disc pl-4">
@@ -26,17 +21,14 @@
                 <li class="text-gray-600 dark:text-gray-300" id="brano-album">Album: [Nome album]</li>
                 <li class="text-gray-600 dark:text-gray-300" id="brano-anno">Anno: [Anno]</li>
                 <li class="text-gray-600 dark:text-gray-300" id="brano-genere">Genere: [Genere]</li>
+                <li class="text-gray-600 dark:text-gray-300" id="brano-popolarita">Popolarità: [Popolarità]</li>
             </ul>
         </section>
 
-        <section class="commenti py-4 border-t border-gray-300 dark:border-gray-700">
-            <h2 class="text-xl font-bold text-gray-800 dark:text-white">Commenti</h2>
-            <div id="commenti-container">
-                </div>
-            <form id="form-commento" class="flex items-center py-2 border border-gray-300 rounded-md shadow-sm">
-                <input type="text" id="testo-commento" class="flex-grow px-4 py-2 border-none focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" placeholder="Scrivi un commento">
-                <button type="submit" class="px-4 py-2 text-white bg-indigo-500 hover:bg-indigo-700 rounded-r-md">Invia</button>
-            </form>
+        <section class="tabs py-4">
+            <div id="tabs-container">
+                <iframe id="pdf-viewer" width="100%" height="600px"></iframe> 
+            </div>
         </section>
     </main>
 
