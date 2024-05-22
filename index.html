@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="it" class="">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,18 +7,36 @@
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .dark h1, .dark h2, .dark #moon {
+            color: white;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        body {
+          transition: background-color 0.3s ease, color 0.3s ease;
+        }
+      
+        .dark body {
+          background-color: #121212;
+          color: white;
+        }
+      </style>
 </head>
 <body class="font-sans bg-gray-100">
-    <header class="flex justify-center items-center py-4">
-        <h1 class="text-3xl font-bold text-gray-800">Tabs</h1>
-    </header>
+    <header class="flex justify-center items-center py-4 relative">
+        <h1 class="text-3xl font-bold text-gray-800 dark:text-gray-400">Tabs</h1>
+        <button id="dark-mode-toggle" class="absolute top-1 right-4 p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700">
+          <i class="fas fa-moon text-gray-800 dark:text-gray-400" id="moon"></i>
+        </button>
+      </header>
 
     <main class="container mx-auto px-4">
         <section class="cerca flex justify-between items-center py-4">
             <h2 class="text-xl font-bold text-gray-800">Cerca un brano</h2>
             <div class="flex rounded-md shadow-sm overflow-hidden">
                 <input type="text" id="barra-cerca" class="flex-grow px-4 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" placeholder="Inserisci titolo o artista">
-            </div>
+                <button id="btn-cerca" class="px-4 py-2 text-white bg-indigo-500 hover:bg-indigo-700 rounded-r-md">Cerca</button>            </div>
         </section>
 
         <section class="brani py-4">
@@ -37,16 +55,12 @@
                 </tbody>
             </table>
         </section>
-
-        <section class="generi py-4">
-            <h2 class="text-xl font-bold text-gray-800">Sfoglia per genere</h2>
-        </section>
     </main>
 
     <footer class="text-center py-4 text-gray-500">
         <p>&copy; Tabs</p>
     </footer>
 
-    <script src="script.js"></script>
 </body>
+    <script src="script.js"></script>
 </html>
